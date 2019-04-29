@@ -1,5 +1,5 @@
 function cpfvalidator() {
-   return getcpf("12345678910");
+      return getcpf("12345678910");
       
 }
 
@@ -41,7 +41,6 @@ function digitslicer() {
  return console.log("esse aqui" + tenthdigit);
 
 }
-
 
 
 console.log(cpfvalidator())
