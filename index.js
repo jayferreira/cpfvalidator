@@ -1,13 +1,24 @@
-function cpfvalidator() {
-      return getcpf("12345678910");
-      
-}
-
-function getcpf(string) {
+function cpfvalidator(string) {
    let array = string.split("")
    array = array.map(Number);
-   let numberArray = cpfmultiplicator(array);
-   return numberArray;
+
+   if (verification(array)){
+      let numberArray = cpfmultiplicator(array);
+      return numberArray;
+
+   }else{
+      return false
+   }  
+
+}
+
+function verification(cpfNumber){
+   if (cpfNumber.length < 11 || cpfNumber.length > 11 || cpfNumber.every(digit => digit === cpfNumber[0])) {
+      return false
+
+    } else {
+     return true 
+    }  
 
 }
 
@@ -17,7 +28,7 @@ function cpfmultiplicator(array){
    
    for (elem of array){
        array2.push(elem * multiplier);
-       multiplier --      }
+       multiplier -- }
  let multipliedBy10 = firstsum(array2);
  return multipliedBy10; 
 }
@@ -31,18 +42,16 @@ function firstsum(array2) {
 
  if (contaDoModulo === 10 || contaDoModulo === 11) {
 contaDoModulo = 0;
-console.log("oi");
 } 
  return contaDoModulo;     
 }
 
+
 function digitslicer() {
- let tenthdigit = cpfvalidator();
- return console.log("esse aqui" + tenthdigit);
+   let tenthdigit = cpfvalidator();
+   return console.log("esse aqui" + tenthdigit);
+ 
+ }
 
-}
-
-
-console.log(cpfvalidator())
 
  module.exports.cpfvalidator = cpfvalidator;
