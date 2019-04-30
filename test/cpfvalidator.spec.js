@@ -13,6 +13,10 @@ describe("CPF library", () => {
         it("Should return invalid for shorter than 11 digits", () =>{
             expect(cpf('111111')).to.equal(false);
         });
+
+        it("Should return invalid for strings with letters", () =>{
+            expect(cpf('hellohowar')).to.equal(false);
+        });
                
         it("Should return valid for 91464594210", () =>{
             expect(cpf('91464594210')).to.equal(true);
@@ -20,6 +24,7 @@ describe("CPF library", () => {
         it("Should return valid for 70814200877", () =>{
             expect(cpf('70814200877')).to.equal(true);
         });
+        
 
        
 });

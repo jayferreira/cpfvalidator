@@ -1,5 +1,5 @@
 function cpfvalidator(string) {
-    let array = string.split('').map(Number);
+    let array = string.replace(/\D/g, "").split('').map(Number);
     let firstDigit = array[9];
     let secondDigit = array[10];
  
@@ -18,7 +18,7 @@ function cpfvalidator(string) {
 }
 
 function verification(cpfNumber){
-    if (cpfNumber.length < 11 || cpfNumber.length > 11 || cpfNumber.every(digit => digit === cpfNumber[0])) {
+    if (cpfNumber.length !== 11 || cpfNumber.every(digit => digit === cpfNumber[0])) {
         return false;
     } else {
         return true; 
