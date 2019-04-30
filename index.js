@@ -1,48 +1,48 @@
-function cpfvalidator() {
-      return getcpf("12345678910");
-      
+function cpfvalidator(string) {
+    let array = string.split('').map(Number);
+    let firstDigit = array[9];
+    let secondDigit = array[10];
+ 
+    if (verification(array)){
+        let numberArray1 = cpfmultiplicator(array, 10);
+        let numberArray2 = cpfmultiplicator(array, 11);
+        let firstDigitSum = firstsum(numberArray1,9);
+        let secondDigitSum = firstsum(numberArray2, 10);
+        if(firstDigitSum === firstDigit && secondDigitSum === secondDigit){
+            return true;
+        }
+
+    }else{
+        return false;
+    }  
 }
 
-function getcpf(string) {
-   let array = string.split("")
-   array = array.map(Number);
-   let numberArray = cpfmultiplicator(array);
-   return numberArray;
-
+function verification(cpfNumber){
+    if (cpfNumber.length < 11 || cpfNumber.length > 11 || cpfNumber.every(digit => digit === cpfNumber[0])) {
+        return false;
+    } else {
+        return true; 
+    }  
 }
 
-function cpfmultiplicator(array){
-   let multiplier = 10;
-   let array2 = [];
+function cpfmultiplicator(array, mult){
+    let multiplier = mult;
+    let resultMulti = array.map((elem)=> {return elem * multiplier--;});
+    return resultMulti;
    
-   for (elem of array){
-       array2.push(elem * multiplier);
-       multiplier --      }
- let multipliedBy10 = firstsum(array2);
- return multipliedBy10; 
 }
 
-function firstsum(array2) {
- let firstSumResult = array2.slice(0, 9).reduce((acc, elem) =>{
-     return acc + elem
+function firstsum(array2, sliceNum) {
+    let firstSumResult = array2.slice(0, sliceNum).reduce((acc, elem) =>{
+        return acc + elem;
     },);
-
- let contaDoModulo = (firstSumResult * 10) % 11;   
-
- if (contaDoModulo === 10 || contaDoModulo === 11) {
-contaDoModulo = 0;
-console.log("oi");
-} 
- return contaDoModulo;     
-}
-
-function digitslicer() {
- let tenthdigit = cpfvalidator();
- return console.log("esse aqui" + tenthdigit);
+    let contaDoModulo = (firstSumResult * 10) % 11;   
+ 
+    if (contaDoModulo === 10 || contaDoModulo === 11) {
+        contaDoModulo = 0;
+    }
+    return contaDoModulo;
 
 }
 
-
-console.log(cpfvalidator())
-
- module.exports.cpfvalidator = cpfvalidator;
+module.exports.cpfvalidator = cpfvalidator;
