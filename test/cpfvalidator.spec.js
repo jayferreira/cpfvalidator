@@ -18,11 +18,17 @@ describe("CPF library", () => {
         });               
         it("Should return valid for 91464594210", () =>{
             expect(cpf('91464594210')).to.equal(true);
-        });
+        });        
         it("Should return valid for 70814200877", () =>{
             expect(cpf('70814200877')).to.equal(true);
         });
-        
+        it("Should return valid for a string with dots or dashes", () =>{
+            expect(cpf('708.142.008-77')).to.equal(true);
+        });
+        it("Should return valid for numbers", () =>{
+            expect(cpf(70814200877)).to.equal(true);
+        });
+           
 
        
 });

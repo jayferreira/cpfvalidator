@@ -1,10 +1,10 @@
 {
-  "name": "cpfvalidator",
-  "version": "1.0.0",
-  "description": "descrição",
+  "name": "cpfvalidatorjf",
+  "version": "2.0.0",
+  "description": "Esta biblioteca destina-se à validação de números de CPF, para uso em aplicações web.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc mocha"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "mocha": "^6.1.4"
   },
   "devDependencies": {
-    "eslint": "^5.16.0"
-  
+    "eslint": "^5.16.0",
+    "nyc": "^14.0.0"
   }
 }
