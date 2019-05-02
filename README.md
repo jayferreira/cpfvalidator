@@ -1,36 +1,29 @@
-# Validador de CPF v.1.0.0
+# Validador de CPF v.1.0.0 
 
-  
+**Esta biblioteca se destina à validação de números de CPF, para uso em aplicações web.** Na versão atual é capaz de verificar se um número é um cpf válido ou não.  
 
-**Esta biblioteca se destina à validação de números de CPF, para uso em aplicações web.** Na versão atual é capaz de verificar se um número é um cpf válido ou não.
+## [](https://github.com/jayferreira/cpfvalidator-#como-instalar)Como instalar:  
 
-  
-
-## [](https://github.com/jayferreira/cpfvalidator-#como-instalar)Como instalar:
-
-  
-
-$ npm install cpfvalidatorjf
-
-  
+$ npm install cpfvalidatorjf  
 
 ## [](https://github.com/jayferreira/cpfvalidator#como-utilizar)Como utilizar:
-
   
-
-> const cpfNumber = require("cpfvalidatorjf");
-> console.log(cpfvalidator("12345678910"))
-> // returns false
-
-  
+Exemplo de retorno válido: 
+```javascript
+ const validator = require('cpfvalidatorjf');
+ validator.cpfvalidator("70814200877") //true
+```
+Exemplo de retorno inválido: 
+```javascript
+ const validator = require('cpfvalidatorjf');
+ validator.cpfvalidator("12345678910") //false
+```  
 
 ## [](https://github.com/jayferreira/cpfvalidator#roadmap-oficial-do-projeto)Roadmap oficial do projeto
-
   
 
 #### [](https://github.com/jayferreira/cpfvalidator#vers%C3%A3o-300-sem-previs%C3%A3o-aceita-se-contribui%C3%A7%C3%B5es)versão 3.0.0 (sem previsão, aceita-se contribuições)
-
-  
+ 
 
 - README traduzido para Inglês.
 
