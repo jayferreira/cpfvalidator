@@ -4,7 +4,7 @@
 
 ## [](https://github.com/jayferreira/cpfvalidator-#como-instalar)Como instalar:  
 
-$ npm install cpfValidatorjf  
+$ npm install cpfvalidatorjf  
 
 ## [](https://github.com/jayferreira/cpfvalidator#como-utilizar)Como utilizar:
   
