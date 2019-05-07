@@ -1,6 +1,6 @@
 {
   "name": "cpfvalidatorjf",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Esta biblioteca destina-se à validação de números de CPF, para uso em aplicações web.",
   "main": "index.js",
   "scripts": {

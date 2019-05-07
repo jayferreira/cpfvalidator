@@ -1,7 +1,7 @@
 const chai = require("chai");
 const expect = chai.expect;
 const cpfNumber = require("../index");
-const cpf = cpfNumber.cpfvalidator;
+const cpf = cpfNumber.cpfValidator;
 
 describe("CPF library", () => {
         it("Should return invalid for equal numbers 11111111111", () =>{

@@ -1,4 +1,4 @@
-function cpfvalidator (number) {
+function cpfValidator (number) {
   let array = number.toString().replace(/\D/g, '').split('').map(Number);
   let firstDigit = array[9];
   let secondDigit = array[10];
@@ -42,4 +42,4 @@ function firstsum (array2, sliceNum) {
 
 }
 
-module.exports.cpfvalidator = cpfvalidator;
+module.exports.cpfValidator = cpfValidator;
